@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="397dp"
+        android:layout_height="244dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/calculator_display_bg"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="end|bottom"
+        android:letterSpacing="0.05"
+        android:lineSpacingMultiplier="1.2"
+        android:padding="8dp"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridLayout
+        android:layout_width="429dp"
+        android:layout_height="518dp"
+        android:columnCount="4"
+        android:rowCount="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bmod"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/calculator_button"
+            android:onClick="op"
+            android:text="%"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bc"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:background="@drawable/calculator_button"
+            android:text="C"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bac"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:background="@drawable/calculator_button"
+            android:text="AC"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/b9"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:background="@drawable/calculator_button"
+            android:onClick="num"
+            android:text="9"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/b8"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:background="@drawable/calculator_button"
+            android:onClick="num"
+            android:text="8"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/b7"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:background="@drawable/calculator_button"
+            android:onClick="num"
+            android:text="7"
+
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/b6"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:background="@drawable/calculator_button"
+            android:onClick="num"
+            android:text="6"
+
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/b5"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:background="@drawable/calculator_button"
+            android:onClick="num"
+            android:text="5"
+
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/b4"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:background="@drawable/calculator_button"
+            android:onClick="num"
+            android:text="4"
+
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/b3"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="3"
+            android:layout_column="2"
+            android:background="@drawable/calculator_button"
+            android:onClick="num"
+            android:text="3"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/b2"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:background="@drawable/calculator_button"
+            android:onClick="num"
+            android:text="2"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/b1"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:background="@drawable/calculator_button"
+            android:onClick="num"
+            android:text="1"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bdot"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:background="@drawable/calculator_button"
+            android:onClick="num"
+            android:text="."
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/b0"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:background="@drawable/calculator_button"
+            android:onClick="num"
+            android:text="0"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bsq"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="4"
+            android:layout_column="2"
+            android:background="@drawable/calculator_button"
+            android:onClick="op"
+            android:text="Χ²"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bbracket2"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="4"
+            android:layout_column="3"
+            android:background="@drawable/calculator_button"
+            android:onClick="op"
+            android:text="="
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bp"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="3"
+            android:layout_column="3"
+            android:background="@drawable/calculator_button"
+            android:onClick="op"
+            android:text="+"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bn"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="2"
+            android:layout_column="3"
+            android:background="@drawable/calculator_button"
+            android:onClick="op"
+            android:text="-"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bm"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:background="@drawable/calculator_button"
+            android:onClick="op"
+            android:text="X"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bd"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:background="@drawable/calculator_button"
+            android:onClick="op"
+            android:text="/"
+            android:textColor="@color/white" />
+
+    </GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
