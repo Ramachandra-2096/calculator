@@ -8,52 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
-<<<<<<< HEAD
-
-    public class MainActivity extends AppCompatActivity {
-        Button button, btnac, btnc;
-        TextView txt;
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-            txt = findViewById(R.id.textView);
-            btnac = findViewById(R.id.bac);
-            btnc = findViewById(R.id.bc);
-
-            btnac.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    txt.setText("");
-                }
-            });
-
-            btnc.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String currentText = txt.getText().toString();
-                    if (!currentText.isEmpty()) {
-                        txt.setText(currentText.substring(0, currentText.length() - 1));
-                    }
-                }
-            });
-        }
-
-        public void num(View view) {
-            Button button = (Button) view;
-            String currentText = txt.getText().toString();
-            txt.setText(currentText + button.getText().toString());
-        }
-
-        public void op(View view) {
-            button = (Button) view;
-            String currentText = txt.getText().toString();
-            if (button.getText().toString().equals("Χ²"))
-            {
-                txt.setText(txt.getText().toString()+"^2");
-            }else {
-=======
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -100,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         if (button.getText().toString().equals("Χ²")) {
             txt.setText(txt.getText().toString() + "^2");
         } else {
->>>>>>> 92f571b (second commit)
             if (!button.getText().toString().equals("=")) {
                 if (currentText.isEmpty() || isOperator(currentText.charAt(currentText.length() - 1))) {
 
@@ -116,72 +69,6 @@ public class MainActivity extends AppCompatActivity {
                     txt.setText("Error");
                 }
             }
-<<<<<<< HEAD
-            }
-        }
-
-        private static double evaluateExpression(String expression) {
-            expression = expression.replaceAll(" ", "").trim();
-
-            try {
-                return evaluateExpressionHelper(expression);
-            } catch (ArithmeticException e) {
-                e.printStackTrace();
-                throw new ArithmeticException("Invalid expression");
-            }
-        }
-
-        private static double evaluateExpressionHelper(String expression) {
-            String[] tokens = expression.split("(?=[-+*/%^])|(?<=[-+*/%^])");
-
-            double result = 0;
-            double currentNumber = 0;
-            String operator = "+";
-            boolean expectingNumber = true;
-
-            for (String token : tokens) {
-                if (token.matches("[+\\-*/%^]")) {
-                    operator = token;
-                    expectingNumber = true;
-                } else {
-                    double value = Double.parseDouble(token);
-                    if (expectingNumber) {
-                        currentNumber = value;
-                    } else {
-                        if (operator.equals("+")) {
-                            currentNumber += value;
-                        } else if (operator.equals("-")) {
-                            currentNumber -= value;
-                        } else if (operator.equals("*")) {
-                            currentNumber *= value;
-                        } else if (operator.equals("/")) {
-                            if (value == 0) {
-                                throw new ArithmeticException("Division by zero");
-                            }
-                            currentNumber /= value;
-                        } else if (operator.equals("%")) {
-                            currentNumber %= value;
-                        } else if (operator.equals("^")) {
-                            currentNumber = Math.pow(currentNumber, 2);
-                        }
-                    }
-                    expectingNumber = false;
-                }
-            }
-
-            if (expectingNumber) {
-                throw new ArithmeticException("Invalid expression");
-            }
-
-            return currentNumber;
-        }
-
-
-        private static boolean isOperator(char c) {
-            return c == '+' || c == '-' || c == '*' || c == '/' || c == '%' || c == '^';
-        }
-    }
-=======
         }
     }
 
@@ -214,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                     i++;
                 }
                 output.add(operand.toString());
-                i--; // Move back one step as the outer loop will also increment 'i'
+                i--;
             } else if (isOperator(token)) {
                 while (!operators.isEmpty() && getPrecedence(operators.peek()) >= getPrecedence(token)) {
                     output.add(operators.pop().toString());
@@ -229,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
         return output;
     }
+
 
     private static double evaluatePostfix(Queue<String> postfix) {
         Stack<Double> operands = new Stack<>();
@@ -288,4 +176,3 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
->>>>>>> 92f571b (second commit)
